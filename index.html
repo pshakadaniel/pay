@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="icon" href="favicon.jpg" type="image/jpg" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&display=swap"
+      rel="stylesheet"
+    />
+    <title>Payment Checker &copy; Daniel 2024</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container glass">
+      <main class="table">
+        <section class="table-header">
+          <h1 class="text">JOB Paycheck</h1>
+        </section>
+        <section class="table-body">
+          <table>
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Date</th>
+                <th>Hourly rate</th>
+                <th>Total Hours</th>
+                <th>Receive</th>
+                <th>Action</th>
+
+                <div class="sort-section">
+                  <select id="sort-options" onchange="sortJobs()">
+                    <option value="name">Sort by Name</option>
+                    <option value="date">Sort by Date</option>
+                    <option value="rate">Sort by Hourly Rate</option>
+                    <option value="hours">Sort by Total Hours</option>
+                    <option value="status">Sort by Status</option>
+                  </select>
+                </div>
+              </tr>
+            </thead>
+            <tbody id="job-container">
+              <!-- Job rows will be dynamically added here -->
+            </tbody>
+          </table>
+          <button class="add-btn text" onclick="addJob()">Add Job</button>
+
+          <button class="calculate-btn text" onclick="calculateTotalPayment()">
+            Calculate Total Payment
+          </button>
+
+          <div class="result" id="total-result"></div>
+        </section>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
