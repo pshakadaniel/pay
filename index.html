@@ -46,13 +46,18 @@
               <!-- Job rows will be dynamically added here -->
             </tbody>
           </table>
-          <button class="add-btn text" onclick="addJob()">Add Job</button>
+          <div class="calc-btn">
+            <button class="add-btn text" onclick="addJob()">Add Job</button>
 
-          <button class="calculate-btn text" onclick="calculateTotalPayment()">
-            Calculate Total Payment
-          </button>
+            <button
+              class="calculate-btn text"
+              onclick="calculateTotalPayment()"
+            >
+              Calculate Total Payment
+            </button>
 
-          <div class="result" id="total-result"></div>
+            <div class="result" id="total-result"></div>
+          </div>
         </section>
       </main>
     </div>

@@ -69,7 +69,19 @@ body {
 }
 
 #sort-options {
-  background-color: #ced4da;
+  color: #fefeea;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0)
+  );
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 8px 32px 0 rgba(255, 255, 255, 0.37);
+  font-weight: bolder;
+  font-size: 12px;
   padding: 8px;
   border-radius: 4px;
 }
@@ -152,9 +164,28 @@ main.table {
 }
 
 input {
-  background-color: #ced4da;
-  width: 90%;
-  padding: 8px;
+  color: #fefeea;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0)
+  );
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 8px 32px 0 rgba(255, 255, 255, 0.37);
+  font-weight: bolder;
+  font-size: 12px;
+}
+
+input::placeholder {
+  color: rgba(
+    255,
+    255,
+    255,
+    0.7
+  ); /* Optional: white placeholder text with some transparency */
 }
 
 button {
@@ -189,7 +220,6 @@ button:hover {
   font-size: 1.2em;
   color: white;
 }
-
 .remove-btn {
   background-color: #ff4c4c;
 }
