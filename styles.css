@@ -48,15 +48,15 @@ body {
   box-shadow: 0 8px 32px 0 rgba(255, 255, 255, 0.37);
 }
 
-.text {
-  text-align: center;
-  color: #333;
-}
-
 .sort-section {
   margin-top: 20px;
   margin-bottom: 20px;
   text-align: right;
+  position: sticky;
+  left: 0;
+  z-index: 2; /* Ensure it stays above table content */
+
+  padding: 10px;
 }
 
 .sort-btn {
@@ -89,8 +89,7 @@ body {
 table {
   width: 100%;
 }
-
-table,
+tr table,
 th,
 td {
   border-collapse: collapse;
@@ -122,17 +121,18 @@ tbody tr:hover {
 
 main.table {
   width: 100%; /* Make it responsive */
-  max-width: 800px; /* Limit max width */
+  max-width: 48rem; /* Limit max width */
   height: auto; /* Set height to auto */
   backdrop-filter: blur(7px);
   -webkit-backdrop-filter: blur(10px);
   border-radius: 0.8rem;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  box-shadow: 0 0.4rem 0.8rem #0005;
   overflow: hidden;
+  position: relative;
+  padding-bottom: 60px;
 }
 
 .table-header {
+  position: relative;
   width: 100%;
   height: auto; /* Set height to auto */
   background-color: #fff4;
@@ -188,6 +188,16 @@ input::placeholder {
   ); /* Optional: white placeholder text with some transparency */
 }
 
+.btns {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1; /* Keeps the button on top but below the content */
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
 button {
   padding: 8px 12px;
   background-color: #4caf50;
@@ -196,22 +206,40 @@ button {
   border-radius: 4px;
   cursor: pointer;
 }
-
 button:hover {
   background-color: #45a049;
 }
-
-.add-btn {
-  margin-top: 10px;
+.btn-icon {
+  width: 32px;
+  height: 32px;
+  display: flex; /* Make the icon a flex container */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+}
+.add-btn,
+.calc-btn {
+  margin-top: 16px;
+  margin-bottom: 16px;
+  width: auto; /* Adjust width to; fit content */
+  height: 64px;
+  display: flex;
 }
 
-.calculate-btn {
-  margin-top: 20px;
+.add-btn:hover {
+}
+
+.calc-btn {
   background-color: #007bff;
 }
 
-.calculate-btn:hover {
+.calc-btn:hover {
   background-color: #0069d9;
+}
+
+.add-btn-text,
+.calc-btn-text {
+  margin-top: 10px;
+  width: auto; /* Keep width flexible */
 }
 
 .result {
