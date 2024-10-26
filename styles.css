@@ -35,6 +35,7 @@ body {
 }
 
 .glass {
+  position: relative;
   background: linear-gradient(
     135deg,
     rgba(255, 255, 255, 0.1),
