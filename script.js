@@ -51,7 +51,7 @@ function addJob(
         <td><input type="number" id="rate-${jobCount}" value="${rate}" placeholder="Rate per hour"></td>
         <td><input type="number" id="hours-${jobCount}" value="${hours}" placeholder="Total hours"></td>
         <td>
-          <select id="status-${jobCount}">
+          <select id="status-${jobCount}" class="status-dropdown">
             <option value="yes" ${
               status === "yes" ? "selected" : ""
             }>Yes</option>
@@ -64,11 +64,24 @@ function addJob(
   jobContainer.appendChild(jobRow);
 
   // Add event listeners to input fields to save on change
-  attachInputListeners(jobCount);
+  attachInputListeners(jobCount); // Set initial color based on status
+  const statusSelect = document.getElementById(`status-${jobCount}`);
+  updateStatusColor(statusSelect);
+
+  // Add event listener to change color when status changes
+  statusSelect.addEventListener("change", () =>
+    updateStatusColor(statusSelect)
+  );
 
   saveJobs(); // Save jobs after adding a new one
 }
-
+function updateStatusColor(selectElement) {
+  if (selectElement.value === "yes") {
+    selectElement.style.backgroundColor = "#80ed99";
+  } else if (selectElement.value === "no") {
+    selectElement.style.backgroundColor = "#ad2831";
+  }
+}
 // Attach input listeners to save data on change
 function attachInputListeners(count) {
   const jobNameInput = document.getElementById(`job-name-${count}`);
